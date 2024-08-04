@@ -42,6 +42,7 @@ public class Knight extends Piece {
                 }
             }
 
+
         }
 
         return Collections.unmodifiableList(legalMoves);
