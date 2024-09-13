@@ -15,8 +15,8 @@ public class King extends Piece {
 
     private final static int[] CANDIDATE_MOVE_COORDINATES = {-9, -8, -7, -1, 1, 7, 8, 9};
 
-    King(final int piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public King(final Alliance pieceAlliance, final int piecePosition) {
+        super(PieceType.KING, piecePosition, pieceAlliance);
     }
 
     private static boolean isFirstColumnExclusions(final int currentPosition, final int candidateOffset) {
@@ -26,6 +26,11 @@ public class King extends Piece {
 
     private static boolean isEighthColumnExclusion(final int currentPosition, final int candidateOffset) {
         return BoardUtils.EIGHTH_COLUMN[currentPosition] && ((candidateOffset == 1) || (candidateOffset == -7) || (candidateOffset == 9));
+    }
+
+    @Override
+    public String toString() {
+        return PieceType.KING.toString();
     }
 
     @Override
